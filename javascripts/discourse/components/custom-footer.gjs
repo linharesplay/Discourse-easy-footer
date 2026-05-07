@@ -16,7 +16,8 @@ export default class extends Component {
   }
 
   <template>
-    <div class="wrap">
+    {{#if @showFooter}}
+      <div class="wrap">
         <div class="flexbox">
           <div class="first-box">
             <div class="heading">
@@ -105,5 +106,6 @@ export default class extends Component {
           </div>
         </div>
       </div>
+    {{/if}}
   </template>
 }
