@@ -5,8 +5,6 @@
 # https://translate.discourse.org/
 
 pt_BR:
-  heading: "Bem-vindo a nossa comunidade"
-  blurb: "Junte-se a nossa comunidade para se conectar com outros, compartilhar suas ideias e descobrir novos conteudos."
   theme_metadata:
     settings:
       heading:
@@ -74,10 +72,6 @@ pt_BR:
             icon_name:
               label: Nome do ícone
               description: O nome do ícone de FontAwesome 6 (ícones de marca precisam do prefixo "fab-")
-      google_play_store_url:
-        description: "URL do seu aplicativo na Google Play Store. Deixe em branco para ocultar o botão."
-      google_play_button_text:
-        description: "Texto a ser exibido no botão da Google Play Store."
       show_footer_on_login_required_page:
         description: "Verifique esta configuração se quiser que o rodapé seja exibido na página de solicitação de login (aplica-se apenas se o seu site for privado)"
       svg_icons:
