@@ -3,11 +3,10 @@ import PluginOutlet from "discourse/components/plugin-outlet";
 import concatClass from "discourse/helpers/concat-class";
 import icon from "discourse/helpers/d-icon";
 import dasherize from "discourse/helpers/dasherize";
-import i18n from "discourse/helpers/i18n";
 
 export default class extends Component {
-  mainHeading = themePrefix("heading");
-  blurb = themePrefix("blurb");
+  mainHeading = settings.heading;
+  blurb = settings.blurb;
   googlePlayStoreUrl = settings.google_play_store_url;
   googlePlayButtonText = settings.google_play_button_text;
 
