@@ -6,7 +6,7 @@ import icon from "discourse/helpers/d-icon";
 import dasherize from "discourse/helpers/dasherize";
 
 export default class extends Component {
-  mainHeading = settings.heading;
+  blurb = settings.blurb;
   logoUrl = settings.logo_url;
   googlePlayStoreUrl = settings.google_play_store_url;
   googlePlayButtonText = settings.google_play_button_text;
@@ -30,14 +30,13 @@ export default class extends Component {
               <div
                 class="footer-logo"
                 role="img"
-                aria-label={{this.mainHeading}}
+                aria-label="Gamer Nation"
                 style={{this.logoStyle}}
               ></div>
-            {{else}}
-              <div class="heading">
-                {{this.mainHeading}}
-              </div>
             {{/if}}
+            <div class="blurb">
+              {{this.blurb}}
+            </div>
           </div>
           <div class="second-box">
             <PluginOutlet @name="easy-footer-second-box">
