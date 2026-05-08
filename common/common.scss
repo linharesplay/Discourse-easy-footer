@@ -16,7 +16,9 @@
   }
 
   .first-box {
+    flex: 0 0 20%;
     max-width: 20%;
+    min-width: 260px;
 
     .heading {
       font-size: $font-up-2;
@@ -31,8 +33,8 @@
 
     .footer-logo {
       display: block;
-      width: 100%;
-      max-width: 260px;
+      width: 260px;
+      max-width: 100%;
       height: 56px;
       background-color: var(--secondary);
       -webkit-mask-image: var(--footer-logo-url);
