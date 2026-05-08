@@ -28,6 +28,22 @@
     .blurb {
       color: var(--secondary-high);
     }
+
+    .footer-logo {
+      display: block;
+      width: 100%;
+      max-width: 260px;
+      height: 56px;
+      background-color: var(--secondary);
+      -webkit-mask-image: var(--footer-logo-url);
+      mask-image: var(--footer-logo-url);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: left center;
+      mask-position: left center;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+    }
   }
 
   .second-box {
@@ -166,6 +182,14 @@
       .blurb {
         display: flex;
         align-items: center;
+      }
+
+      .footer-logo {
+        max-width: 220px;
+        height: 48px;
+        -webkit-mask-position: center center;
+        mask-position: center center;
+        margin: 0 auto;
       }
     }
 

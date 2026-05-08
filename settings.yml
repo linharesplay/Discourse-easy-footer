@@ -1,10 +1,14 @@
 heading:
-  default: "This is a header"
+  default: "Gamer Nation"
   max: 25
 
 blurb:
   default: "Ius vitae ornatus at, ei mea sumo quot dicant. Ei tale democritum eos, in mea timeam accumsan forensibus. Ei his aperiam suavitate. Et debitis convenire sea, viris dictas latine."
   max: 180
+
+logo_url:
+  default: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gamer%20nation%20white-iFGIRfor5qAQt7s6MM6rz8jEFbVaVs.png"
+  type: string
 
 sections:
   type: objects

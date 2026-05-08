@@ -4,7 +4,9 @@ en:
       heading:
         description: "Text for the heading in the footer - you can use your site name for example - Max length 25 characters"
       blurb:
-        description: "Enter a short blurb about your community - Max length 180 characters"
+        description: "Enter a short blurb about your community - Max length 180 characters (only shown when no logo URL is set)"
+      logo_url:
+        description: "URL of the logo image to display in the footer (replaces the blurb). Use a single-color PNG with a transparent background — it will be re-colored to match your theme automatically. Leave empty to show the blurb instead."
       sections:
         description: "Sections to be displayed in the footer"
         schema:

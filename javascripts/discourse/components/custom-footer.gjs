@@ -1,4 +1,5 @@
 import Component from "@glimmer/component";
+import { htmlSafe } from "@ember/template";
 import PluginOutlet from "discourse/components/plugin-outlet";
 import concatClass from "discourse/helpers/concat-class";
 import icon from "discourse/helpers/d-icon";
@@ -6,7 +7,7 @@ import dasherize from "discourse/helpers/dasherize";
 
 export default class extends Component {
   mainHeading = settings.heading;
-  blurb = settings.blurb;
+  logoUrl = settings.logo_url;
   googlePlayStoreUrl = settings.google_play_store_url;
   googlePlayButtonText = settings.google_play_button_text;
 
@@ -14,16 +15,29 @@ export default class extends Component {
     return this.googlePlayStoreUrl && this.googlePlayStoreUrl.trim() !== "";
   }
 
+  get logoStyle() {
+    if (!this.logoUrl) {
+      return null;
+    }
+    return htmlSafe(`--footer-logo-url: url("${this.logoUrl}");`);
+  }
+
   <template>
     <div class="wrap">
         <div class="flexbox">
           <div class="first-box">
-            <div class="heading">
-              {{this.mainHeading}}
-            </div>
-            <div class="blurb">
-              {{this.blurb}}
-            </div>
+            {{#if this.logoUrl}}
+              <div
+                class="footer-logo"
+                role="img"
+                aria-label={{this.mainHeading}}
+                style={{this.logoStyle}}
+              ></div>
+            {{else}}
+              <div class="heading">
+                {{this.mainHeading}}
+              </div>
+            {{/if}}
           </div>
           <div class="second-box">
             <PluginOutlet @name="easy-footer-second-box">
