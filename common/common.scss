@@ -236,11 +236,16 @@
       }
     }
 
+    .second-box .links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5em 1em;
+      justify-content: stretch;
+    }
+
     .list {
-      margin-top: 0.75em;
-      display: inline-block;
-      vertical-align: top;
-      min-width: 50%;
+      margin: 0;
+      min-width: 0;
       font-size: $font-0;
 
       span {
@@ -250,10 +255,10 @@
       li {
         margin: 0.35em 0;
       }
-    }
 
-    .links {
-      display: inline-block;
+      ul {
+        padding: 0;
+      }
     }
 
     .third-box {
