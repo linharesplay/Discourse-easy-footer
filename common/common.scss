@@ -12,13 +12,13 @@
     display: flex;
     flex-wrap: wrap;
     color: var(--secondary);
-    padding: 2em 0 1em 0;
+    padding: 1.25em 0 0.5em 0;
   }
 
   .first-box {
-    flex: 0 0 20%;
-    max-width: 20%;
-    min-width: 260px;
+    flex: 0 0 22%;
+    max-width: 22%;
+    min-width: 200px;
 
     .heading {
       font-size: $font-up-2;
@@ -29,14 +29,16 @@
 
     .blurb {
       color: var(--secondary-high);
+      font-size: $font-down-1;
+      line-height: 1.4;
     }
 
     .footer-logo {
       display: block;
-      width: 260px;
+      width: 180px;
       max-width: 100%;
-      height: 56px;
-      margin-bottom: 1em;
+      height: 38px;
+      margin-bottom: 0.6em;
       background-color: var(--secondary);
       -webkit-mask-image: var(--footer-logo-url);
       mask-image: var(--footer-logo-url);
@@ -64,7 +66,8 @@
       }
 
       li {
-        margin: 0.5em 0;
+        margin: 0.35em 0;
+        font-size: $font-down-1;
       }
     }
   }
@@ -101,8 +104,8 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5em;
-      padding: 0.6em 1.2em;
-      margin: 20px 10px;
+      padding: 0.5em 1em;
+      margin: 12px 10px;
       background-color: var(--secondary);
       color: var(--primary);
       border-radius: 6px;
@@ -148,8 +151,7 @@
   }
 
   .list {
-    margin: 1em;
-    margin-top: 0;
+    margin: 0 1em;
   }
 
   .d-icon {
