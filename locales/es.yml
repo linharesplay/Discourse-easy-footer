@@ -5,6 +5,62 @@
 # https://translate.discourse.org/
 
 es:
+  blurb: "Lee las noticias de primera mano, mantente al tanto de los rumores y filtraciones del mundo gamer. Participa en chats de voz y texto en tiempo real, etc."
+  google_play_button_text: "Descargar en Google Play"
+  sections:
+    section_0:
+      text: "Participa"
+      title: "Participa"
+      links:
+        link_0:
+          text: "Preséntate"
+          title: "Preséntate"
+        link_1:
+          text: "Muestra tu setup gamer"
+          title: "Muestra tu setup gamer"
+        link_2:
+          text: "Promociona tu live en Twitch"
+          title: "Promociona tu live en Twitch"
+    section_1:
+      text: "Temas populares"
+      title: "Temas populares"
+      links:
+        link_0:
+          text: "Imágenes aleatorias de internet"
+          title: "Imágenes aleatorias de internet"
+        link_1:
+          text: "FiveM sin tarjeta gráfica"
+          title: "FiveM sin tarjeta gráfica"
+        link_2:
+          text: "DayZ 2 podría estar en camino"
+          title: "DayZ 2 podría estar en camino"
+    section_2:
+      text: "Enlaces útiles"
+      title: "Enlaces útiles"
+      links:
+        link_0:
+          text: "Atajos de teclado"
+          title: "Atajos de teclado"
+        link_1:
+          text: "Reglas generales del foro"
+          title: "Reglas generales del foro"
+        link_2:
+          text: "Últimas noticias de juegos"
+          title: "Últimas noticias de juegos"
+  small_links:
+    link_0:
+      text: "Privacidad"
+    link_1:
+      text: "Cookies"
+    link_2:
+      text: "Términos de uso"
+  social_links:
+    link_0:
+      title: "Únete a nosotros en Facebook"
+    link_1:
+      title: "Muestra un poco de amor en Twitter"
+    link_2:
+      title: "Mira nuestros últimos videos en Youtube"
   theme_metadata:
     settings:
       heading:

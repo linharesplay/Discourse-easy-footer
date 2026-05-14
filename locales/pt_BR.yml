@@ -5,6 +5,62 @@
 # https://translate.discourse.org/
 
 pt_BR:
+  blurb: "Leia notícias em primeira mão, fique por dentro de rumores e de vazamentos do mundo gamer. Participe de chats de voz e texto em tempo real, etc."
+  google_play_button_text: "Baixe no Google Play"
+  sections:
+    section_0:
+      text: "Participe"
+      title: "Participe"
+      links:
+        link_0:
+          text: "Apresente-se"
+          title: "Apresente-se"
+        link_1:
+          text: "Mostre o seu setup gamer"
+          title: "Mostre o seu setup gamer"
+        link_2:
+          text: "Divulgue a sua live na Twitch"
+          title: "Divulgue a sua live na Twitch"
+    section_1:
+      text: "Tópicos em alta"
+      title: "Tópicos em alta"
+      links:
+        link_0:
+          text: "Imagens aleatórias da internet"
+          title: "Imagens aleatórias da internet"
+        link_1:
+          text: "FiveM sem placa de vídeo"
+          title: "FiveM sem placa de vídeo"
+        link_2:
+          text: "DayZ 2 pode estar a caminho"
+          title: "DayZ 2 pode estar a caminho"
+    section_2:
+      text: "Links úteis"
+      title: "Links úteis"
+      links:
+        link_0:
+          text: "Atalhos do teclado"
+          title: "Atalhos do teclado"
+        link_1:
+          text: "Regras Gerais do fórum"
+          title: "Regras Gerais do fórum"
+        link_2:
+          text: "Últimas notícias de games"
+          title: "Últimas notícias de games"
+  small_links:
+    link_0:
+      text: "Privacidade"
+    link_1:
+      text: "Cookies"
+    link_2:
+      text: "Termos de uso"
+  social_links:
+    link_0:
+      title: "Junte-se a nós no Facebook"
+    link_1:
+      title: "Mostre um pouco de amor no Twitter"
+    link_2:
+      title: "Confira nossos últimos vídeos no Youtube"
   theme_metadata:
     settings:
       heading:
