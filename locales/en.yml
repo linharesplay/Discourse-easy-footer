@@ -1,4 +1,60 @@
 en:
+  blurb: "Read the news first hand, stay on top of rumors and leaks from the gaming world. Join voice and text chats in real time, etc."
+  google_play_button_text: "Get it on Google Play"
+  sections:
+    section_0:
+      text: "Participate"
+      title: "Participate"
+      links:
+        link_0:
+          text: "Introduce yourself"
+          title: "Introduce yourself"
+        link_1:
+          text: "Show your gamer setup"
+          title: "Show your gamer setup"
+        link_2:
+          text: "Promote your Twitch live"
+          title: "Promote your Twitch live"
+    section_1:
+      text: "Trending Topics"
+      title: "Trending Topics"
+      links:
+        link_0:
+          text: "Random images from the internet"
+          title: "Random images from the internet"
+        link_1:
+          text: "FiveM without graphics card"
+          title: "FiveM without graphics card"
+        link_2:
+          text: "DayZ 2 may be on the way"
+          title: "DayZ 2 may be on the way"
+    section_2:
+      text: "Useful Links"
+      title: "Useful Links"
+      links:
+        link_0:
+          text: "Keyboard shortcuts"
+          title: "Keyboard shortcuts"
+        link_1:
+          text: "Forum General Rules"
+          title: "Forum General Rules"
+        link_2:
+          text: "Latest gaming news"
+          title: "Latest gaming news"
+  small_links:
+    link_0:
+      text: "Privacy"
+    link_1:
+      text: "Cookies"
+    link_2:
+      text: "Terms of use"
+  social_links:
+    link_0:
+      title: "Join us on Facebook"
+    link_1:
+      title: "Show some love on Twitter"
+    link_2:
+      title: "Check out our latest videos on Youtube"
   theme_metadata:
     settings:
       heading:

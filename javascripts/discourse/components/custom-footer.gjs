@@ -1,15 +1,25 @@
 import Component from "@glimmer/component";
 import { htmlSafe } from "@ember/template";
+import { service } from "@ember/service";
 import PluginOutlet from "discourse/components/plugin-outlet";
 import concatClass from "discourse/helpers/concat-class";
 import icon from "discourse/helpers/d-icon";
 import dasherize from "discourse/helpers/dasherize";
+import i18n from "discourse-common/helpers/i18n";
 
 export default class extends Component {
-  blurb = settings.blurb;
+  @service siteSettings;
+
   logoUrl = settings.logo_url;
   googlePlayStoreUrl = settings.google_play_store_url;
-  googlePlayButtonText = settings.google_play_button_text;
+
+  get blurb() {
+    return themePrefix("blurb");
+  }
+
+  get googlePlayButtonText() {
+    return themePrefix("google_play_button_text");
+  }
 
   get showGooglePlayButton() {
     return this.googlePlayStoreUrl && this.googlePlayStoreUrl.trim() !== "";
@@ -20,6 +30,33 @@ export default class extends Component {
       return null;
     }
     return htmlSafe(`--footer-logo-url: url("${this.logoUrl}");`);
+  }
+
+  get sections() {
+    return settings.sections.map((section, sectionIndex) => ({
+      ...section,
+      translatedText: themePrefix(`sections.section_${sectionIndex}.text`),
+      translatedTitle: themePrefix(`sections.section_${sectionIndex}.title`),
+      links: section.links.map((link, linkIndex) => ({
+        ...link,
+        translatedText: themePrefix(`sections.section_${sectionIndex}.links.link_${linkIndex}.text`),
+        translatedTitle: themePrefix(`sections.section_${sectionIndex}.links.link_${linkIndex}.title`),
+      })),
+    }));
+  }
+
+  get smallLinks() {
+    return settings.small_links.map((link, index) => ({
+      ...link,
+      translatedText: themePrefix(`small_links.link_${index}.text`),
+    }));
+  }
+
+  get socialLinks() {
+    return settings.social_links.map((link, index) => ({
+      ...link,
+      translatedTitle: themePrefix(`social_links.link_${index}.title`),
+    }));
   }
 
   <template>
@@ -35,19 +72,19 @@ export default class extends Component {
               ></div>
             {{/if}}
             <div class="blurb">
-              {{this.blurb}}
+              {{i18n this.blurb}}
             </div>
           </div>
           <div class="second-box">
             <PluginOutlet @name="easy-footer-second-box">
               <div class="links">
-                {{#each settings.sections as |section|}}
+                {{#each this.sections as |section|}}
                   <div
                     class="list"
                     data-easyfooter-section={{dasherize section.text}}
                   >
-                    <span title={{section.title}}>
-                      {{section.text}}
+                    <span title={{i18n section.translatedTitle}}>
+                      {{i18n section.translatedText}}
                     </span>
 
                     <ul>
@@ -58,12 +95,12 @@ export default class extends Component {
                         >
                           <a
                             class="footer-section-link"
-                            title={{link.title}}
+                            title={{i18n link.translatedTitle}}
                             href={{link.url}}
                             target={{link.target}}
                             referrerpolicy={{link.referrer_policy}}
                           >
-                            {{link.text}}
+                            {{i18n link.translatedText}}
                           </a>
                         </li>
                       {{/each}}
@@ -76,24 +113,24 @@ export default class extends Component {
 
           <div class="third-box">
             <div class="footer-links">
-              {{#each settings.small_links as |link|}}
+              {{#each this.smallLinks as |link|}}
                 <a
                   class={{concatClass "small-link" link.css_class}}
                   data-easyfooter-small-link={{dasherize link.text}}
                   target={{link.target}}
                   href={{link.url}}
                 >
-                  {{link.text}}
+                  {{i18n link.translatedText}}
                 </a>
               {{/each}}
             </div>
 
             <div class="social">
-              {{#each settings.social_links as |link|}}
+              {{#each this.socialLinks as |link|}}
                 <a
                   class="social-link"
                   data-easyfooter-social-link={{dasherize link.text}}
-                  title={{link.title}}
+                  title={{i18n link.translatedTitle}}
                   target={{link.target}}
                   href={{link.url}}
                 >
@@ -108,10 +145,10 @@ export default class extends Component {
                 href={{this.googlePlayStoreUrl}}
                 target="_blank"
                 rel="noopener noreferrer"
-                title={{this.googlePlayButtonText}}
+                title={{i18n this.googlePlayButtonText}}
               >
                 {{icon "fab-google-play"}}
-                <span>{{this.googlePlayButtonText}}</span>
+                <span>{{i18n this.googlePlayButtonText}}</span>
               </a>
             {{/if}}
           </div>
