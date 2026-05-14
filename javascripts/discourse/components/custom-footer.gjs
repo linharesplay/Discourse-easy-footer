@@ -107,6 +107,21 @@ export default class extends Component {
                     </ul>
                   </div>
                 {{/each}}
+
+                {{#if this.showGooglePlayButton}}
+                  <div class="list google-play-column">
+                    <a
+                      class="google-play-button"
+                      href={{this.googlePlayStoreUrl}}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={{i18n this.googlePlayButtonText}}
+                    >
+                      {{icon "fab-google-play"}}
+                      <span>{{i18n this.googlePlayButtonText}}</span>
+                    </a>
+                  </div>
+                {{/if}}
               </div>
             </PluginOutlet>
           </div>
@@ -138,19 +153,6 @@ export default class extends Component {
                 </a>
               {{/each}}
             </div>
-
-            {{#if this.showGooglePlayButton}}
-              <a
-                class="google-play-button"
-                href={{this.googlePlayStoreUrl}}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={{i18n this.googlePlayButtonText}}
-              >
-                {{icon "fab-google-play"}}
-                <span>{{i18n this.googlePlayButtonText}}</span>
-              </a>
-            {{/if}}
           </div>
         </div>
       </div>
