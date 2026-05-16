@@ -1,13 +1,8 @@
-/* eslint-disable ember/no-classic-components */
-import Component from "@ember/component";
-import { tagName } from "@ember-decorators/component";
 import hideApplicationFooter from "discourse/helpers/hide-application-footer";
 
-@tagName("")
-export default class ShowFooter extends Component {
-  <template>
-    {{#unless settings.show_footer_on_login_required_page}}
-      {{hideApplicationFooter}}
-    {{/unless}}
-  </template>
-}
+// Template-only component for minimal overhead
+<template>
+  {{#unless settings.show_footer_on_login_required_page}}
+    {{hideApplicationFooter}}
+  {{/unless}}
+</template>

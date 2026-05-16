@@ -1,37 +1,49 @@
 import Component from "@glimmer/component";
+import { cached } from "@glimmer/tracking";
 import { htmlSafe } from "@ember/template";
-import { service } from "@ember/service";
 import PluginOutlet from "discourse/components/plugin-outlet";
 import concatClass from "discourse/helpers/concat-class";
 import icon from "discourse/helpers/d-icon";
 import dasherize from "discourse/helpers/dasherize";
 import i18n from "discourse-common/helpers/i18n";
 
-export default class extends Component {
-  @service siteSettings;
+export default class CustomFooter extends Component {
+  // Pre-compute static values once at instantiation
+  #logoUrl = settings.logo_url;
+  #googlePlayStoreUrl = settings.google_play_store_url;
+  #blurb = themePrefix("blurb");
+  #googlePlayButtonText = themePrefix("google_play_button_text");
+  #showGooglePlayButton = this.#googlePlayStoreUrl?.trim().length > 0;
+  #logoStyle = this.#logoUrl
+    ? htmlSafe(`--footer-logo-url: url("${this.#logoUrl}");`)
+    : null;
 
-  logoUrl = settings.logo_url;
-  googlePlayStoreUrl = settings.google_play_store_url;
+  get logoUrl() {
+    return this.#logoUrl;
+  }
+
+  get googlePlayStoreUrl() {
+    return this.#googlePlayStoreUrl;
+  }
 
   get blurb() {
-    return themePrefix("blurb");
+    return this.#blurb;
   }
 
   get googlePlayButtonText() {
-    return themePrefix("google_play_button_text");
+    return this.#googlePlayButtonText;
   }
 
   get showGooglePlayButton() {
-    return this.googlePlayStoreUrl && this.googlePlayStoreUrl.trim() !== "";
+    return this.#showGooglePlayButton;
   }
 
   get logoStyle() {
-    if (!this.logoUrl) {
-      return null;
-    }
-    return htmlSafe(`--footer-logo-url: url("${this.logoUrl}");`);
+    return this.#logoStyle;
   }
 
+  // Use @cached to memoize expensive computations
+  @cached
   get sections() {
     return settings.sections.map((section, sectionIndex) => ({
       ...section,
@@ -45,6 +57,7 @@ export default class extends Component {
     }));
   }
 
+  @cached
   get smallLinks() {
     return settings.small_links.map((link, index) => ({
       ...link,
@@ -52,6 +65,7 @@ export default class extends Component {
     }));
   }
 
+  @cached
   get socialLinks() {
     return settings.social_links.map((link, index) => ({
       ...link,
