@@ -2,6 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   background: var(--primary);
+  // Prevent layout shifts during interactions
+  contain: layout style;
 
   .wrap {
     box-sizing: border-box;
@@ -89,6 +91,20 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        // Enable GPU compositing for smoother hover interactions
+        will-change: opacity;
+        transition: opacity 0.15s ease;
+
+        &:hover {
+          opacity: 0.7;
+        }
+
+        // Improve touch response on mobile
+        @media (hover: none) {
+          &:active {
+            opacity: 0.5;
+          }
+        }
 
         .d-icon {
           color: var(--secondary);
@@ -112,11 +128,20 @@
       font-weight: 600;
       font-size: $font-down-1;
       text-decoration: none;
-      transition: background-color 0.2s ease, transform 0.2s ease;
+      // Use opacity instead of transform to avoid layout recalculation (better INP)
+      transition: opacity 0.15s ease;
+      // Enable GPU compositing for smoother interactions
+      will-change: opacity;
 
       &:hover {
-        background-color: var(--secondary-high);
-        transform: translateY(-1px);
+        opacity: 0.85;
+      }
+
+      // Improve touch response on mobile
+      @media (hover: none) {
+        &:active {
+          opacity: 0.7;
+        }
       }
 
       .d-icon {
@@ -148,6 +173,18 @@
 
   .footer-section-link-wrapper a {
     color: var(--secondary-high);
+    // Improve touch/click responsiveness
+    transition: opacity 0.1s ease;
+    
+    &:hover {
+      opacity: 0.8;
+    }
+    
+    @media (hover: none) {
+      &:active {
+        opacity: 0.6;
+      }
+    }
   }
 
   .list {

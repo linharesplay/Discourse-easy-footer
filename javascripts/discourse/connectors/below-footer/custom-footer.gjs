@@ -1,10 +1,8 @@
-/* eslint-disable ember/no-classic-components, ember/require-tagless-components */
-import Component from "@ember/component";
-import { classNames, tagName } from "@ember-decorators/component";
-import CustomFooter0 from "../../components/custom-footer";
+import CustomFooter from "../../components/custom-footer";
 
-@tagName("div")
-@classNames("below-footer-outlet", "custom-footer")
-export default class CustomFooter extends Component {
-  <template><CustomFooter0 @showFooter={{@outletArgs.showFooter}} /></template>
-}
+// Using template-only component for better performance (no component instance overhead)
+<template>
+  <div class="below-footer-outlet custom-footer">
+    <CustomFooter @showFooter={{@outletArgs.showFooter}} />
+  </div>
+</template>
